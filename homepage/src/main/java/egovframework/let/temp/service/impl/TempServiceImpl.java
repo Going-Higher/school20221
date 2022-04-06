@@ -17,6 +17,7 @@ import egovframework.let.utl.fcc.service.EgovDateUtil;
 
 import egovframework.rte.fdl.cmmn.EgovAbstractServiceImpl;
 import egovframework.rte.fdl.property.EgovPropertyService;
+import egovframework.rte.psl.dataaccess.util.EgovMap;
 
 import javax.annotation.Resource;
 
@@ -37,8 +38,14 @@ public class TempServiceImpl extends EgovAbstractServiceImpl
 		return tempMapper.selectTemp(vo);
 	}  
 	
-//	@Override
-//	public TempVO selectTemp(TempVO vo) throws Exception {
-//		return tempDAO.selectTemp(vo);
-//	} 
+	//임시데이터 목록 가져오기
+	public List<EgovMap> selectTempList(TempVO vo) throws Exception {
+		return tempMapper.selectTempList(vo);
+	}	
+	
+/*	@Override
+	public TempVO selectTemp(TempVO vo) throws Exception {
+		return tempDAO.selectTemp(vo);
+	} 
+*/
 }
