@@ -59,6 +59,11 @@ public class TempServiceImpl extends EgovAbstractServiceImpl
 		tempMapper.deleteTemp(vo);
 	}
 	
+	//임시데이터 목록 수
+	public int selectTempListCnt(TempVO vo) throws Exception {
+		return tempMapper.selectTempListCnt(vo);
+	}
+	
 /*	@Override
 	public TempVO selectTemp(TempVO vo) throws Exception {
 		return tempDAO.selectTemp(vo);
