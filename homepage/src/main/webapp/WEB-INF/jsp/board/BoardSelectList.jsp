@@ -122,7 +122,7 @@
 						
 						<%-- 게시 글이 없을 경우 --%>
 						<c:if test="${fn:length(resultList) == 0}">
-							<tr class="empty"><td colspan="5">검섹 데이터가 없습니다.</td></tr>
+							<tr class="empty"><td colspan="5">검색 데이터가 없습니다.</td></tr>
 						</c:if>
 					</tbody>							
 				</table>
