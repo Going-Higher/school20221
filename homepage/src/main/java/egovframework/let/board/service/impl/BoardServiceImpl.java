@@ -49,4 +49,13 @@ public class BoardServiceImpl extends EgovAbstractServiceImpl implements BoardSe
 		
 		return id;
 	}
+	
+	//게시물 상세정보
+	@Override
+	public BoardVO selectBoard(BoardVO vo) throws Exception {
+		//조회수 업
+		boardMapper.updateViewCnt(vo);
+		
+		return boardMapper.selectBoard(vo);
+	}
 }

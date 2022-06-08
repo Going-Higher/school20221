@@ -124,4 +124,23 @@ public class BoardController {
 		return "forward:/board/selectList.do";
 		
 	}	
+	
+	//게시물 가져오기
+	@RequestMapping(value="/board/select.do")
+	public String select(@ModelAttribute("searchVO") BoardVO searchVO, HttpServletRequest request, ModelMap model) throws Exception{
+		LoginVO user = (LoginVO)EgovUserDetailsHelper.getAuthenticatedUser();
+		model.addAttribute("USER_INFO", user);
+		
+		BoardVO result = boardService.selectBoard(searchVO);
+		//비밀 글여부 체크
+		if("Y".equals(result.getOthbcAt())) {
+			//본인 및 관리자만 허용
+			if(user == null || user.getId() == null || (!user.getId().equals(result.getFrstRegisterId()) && !"admin".equals(user.getId()))) {
+				model.addAttribute("message", "작성자 본인만 확인 가능합니다.");
+				return "forward:/board/selectList.do";
+			}
+		}
+		model.addAttribute("result", result);
+		return "board/BoardSelect";
+	}
 }
