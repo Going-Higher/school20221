@@ -82,15 +82,13 @@ public class BoardController {
 		}
 		
 		BoardVO result = new BoardVO();
-		if(!EgovStringUtil.isEmpty(BoardVO.getBoardId())) {
-			/*
+		if(!EgovStringUtil.isEmpty(BoardVO.getBoardId())) {			
 			result = boardService.selectBoard(BoardVO);
 			//본인 및 관리자만 허용
 			if(!user.getId().equals(result.getFrstRegisterId()) && !"admin".equals(user.getId())) {
 				model.addAttribute("message", "작성자 본인만 확인 가능합니다.");
 				return "forward:/board/selectList.do";
-			}
-			*/
+			}			
 		}
 		model.addAttribute("result", result);
 		
@@ -142,5 +140,49 @@ public class BoardController {
 		}
 		model.addAttribute("result", result);
 		return "board/BoardSelect";
+	}
+	
+	//게시물 수정하기
+	@RequestMapping(value="/board/update.do")
+	public String update(@ModelAttribute("searchVO") BoardVO searchVO, HttpServletRequest request, ModelMap model) throws Exception{
+		//이중 서브밋 방지
+		if(request.getSession().getAttribute("sessionBoard") != null) {
+			return "forward:/board/selectList.do";
+		}
+		
+		LoginVO user = (LoginVO)EgovUserDetailsHelper.getAuthenticatedUser();
+		if(user == null || user.getId() == null) {
+			model.addAttribute("message", "로그인 후 사용가능합니다.");
+			return "forward:/board/selectList.do";
+		}else if("admin".equals(user.getId())) {
+			searchVO.setMngAt("Y");
+		}
+		
+		searchVO.setUserId(user.getId());
+		
+		boardService.updateBoard(searchVO);
+		
+		//이중 서브밋 방지
+		request.getSession().setAttribute("sessionBoard", searchVO);
+		return "forward:/board/selectList.do";
+	}
+	
+	//게시물 삭제하기
+	@RequestMapping(value="/board/delete.do")
+	public String delete(@ModelAttribute("searchVO") BoardVO searchVO, HttpServletRequest request, ModelMap model) throws Exception{
+		
+		LoginVO user = (LoginVO)EgovUserDetailsHelper.getAuthenticatedUser();
+		if(user == null || user.getId() == null) {
+			model.addAttribute("message", "로그인 후 사용가능합니다.");
+			return "forward:/board/selectList.do";
+		}else if("admin".equals(user.getId())) {
+			searchVO.setMngAt("Y");
+		}
+		
+		searchVO.setUserId(user.getId());
+		
+		boardService.deleteBoard(searchVO);
+		
+		return "forward:/board/selectList.do";		
 	}
 }

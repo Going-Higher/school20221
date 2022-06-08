@@ -73,7 +73,7 @@
 						<%-- 공지 글 --%>
 						<c:forEach var="result" items="${noticeResultList}" varStatus="status">
 							<tr class="notice">
-								<td class="num"><span class="labe-bbs spot">공지</span></td>
+								<td class="num"><span class="label-bbs spot">공지</span></td>
 								<td class="tit">
 									<c:url var="viewUrl" value="/board/select.do${_BASE_PARAM}">
 										<c:param name="boardId" value="${result.boardId}"/>
@@ -97,6 +97,7 @@
 						<c:forEach var="result" items="${resultList}" varStatus="status">
 							<tr>
 								<td class="num">
+									<!-- 게시판 번호 역순  -->
 									<c:out value="${paginationInfo.totalRecordCount - ((searchVO.pageIndex - 1) * searchVO.pageUnit) - (status.count - 1)}" />
 								</td>
 								<td class="tit">

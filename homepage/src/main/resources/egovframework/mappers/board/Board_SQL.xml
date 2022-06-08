@@ -55,12 +55,15 @@
 				<otherwise>
 					<if test='searchCondition != null and searchCondition != ""'>
 						<choose>
+							<!-- 제목 -->
 							<when test='searchCondition == "0"'>
 								AND A.BOARD_SJ LIKE CONCAT('%', #{searchKeyword}, '%')
 							</when>
+							<!-- 내용 -->
 							<when test='searchCondition == "1"'>
 								AND A.BOARD_CN LIKE CONCAT('%', #{searchKeyword}, '%')
 							</when>
+							<!-- 작성자 -->							
 							<when test='searchCondition == "2"'>
 								AND A.FRST_REGISTER_ID LIKE CONCAT('%', #{searchKeyword}, '%')
 							</when>
@@ -125,5 +128,31 @@
 		UPDATE BOARD SET
 			INQIRE_CO = INQIRE_CO + 1
 		WHERE BOARD_ID = #{boardId}
+	</update>
+	
+	<update id="updateBoard" parameterType="egovframework.let.board.service.BoardVO">
+		UPDATE BOARD SET
+			BOARD_SJ = #{boardSj}
+			, BOARD_CN = #{boardCn}
+			, NOTICE_AT = #{noticeAt}
+			, OTHBC_AT = #{othbcAt}
+			<if test='atchFileId != null and atchFileid != ""'>
+				, ATCH_FILE_ID = #{atchFileId}
+			</if>
+			, LAST_UPDT_PNTTM = NOW()
+			, LAST_UPDUSR_ID = #{userId}
+		WHERE BOARD_ID = #{boardId}
+		<if test='mngAt != "Y"'>
+			AND FRST_REGISTER_ID = #{userId}
+		</if>
+	</update>
+	
+	<update id="deleteBoard" parameterType="egovframework.let.board.service.BoardVO">
+		UPDATE BOARD SET
+			USE_AT = 'N'
+		WHERE BOARD_ID = #{boardId}
+		<if test='mngAt != "Y"'>
+			AND FRST_REGISTER_ID = #{userId}
+		</if>
 	</update>
 </mapper>
