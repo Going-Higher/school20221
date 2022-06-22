@@ -109,6 +109,7 @@ $(function(){
 	<div id="contents">
 		<form action="${actionUrl}" method="post" id="frm" name="frm" onsubmit="return regist()" enctype="multipart/form-data">
 			<input type="hidden" name="boardId" value="${result.boardId}"/>
+			<input type="hidden" name="returnUrl" value="/board/boardRegist.do"/>
 			
 			<table class="chart2">
 				<caption>게시글 작성</caption>
@@ -156,10 +157,30 @@ $(function(){
 						</td>
 					</tr>
 					
+					<c:if test="${not empty result.atchFileId}">
+						<tr>
+							<th scope="row">기존<br/>첨부파일목록</th>
+							<td>
+								<c:import url="/cmm/fms/selectFileInfsForUpdate.do" charEncoding="utf-8">
+									<c:param name="param_atchFileId" value="${result.atchFileId}"/>
+								</c:import>
+							</td>
+						</tr>
+					</c:if>
+					
 					<tr>
 						<th scope="row">파일첨부</th>
 						<td>
 							<input type="file" name="file_1"/>
+							<br/>
+							<input type="file" name="file_2"/>
+							<br/>
+							<input type="file" name="file_3"/>
+							<br/>
+							<input type="file" name="file_4"/>
+							<br/>
+							<input type="file" name="file_5"/>
+							<br/>
 						</td>
 					</tr>						
 				</tbody>
