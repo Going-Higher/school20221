@@ -27,9 +27,36 @@
 <link href="/asset/BBSTMP_0000000000001/style.css" rel="stylesheet" />
 <!-- 공통 Style -->
 <link href="/asset/LYTTMP_0000000000000/style.css" rel="stylesheet" />
+<link href="/asset/front/css/nav.css" rel="stylesheet" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/77c9453159.js" crossorigin="anonymous"></script>
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 <body>
+
+<header>
+        <h2><a href="/index.do">샤방샤방</a></h2>
+        <nav>
+            <li><a href="/index.do#about">소개</a></li>
+            <li><a href="#">매물찾기</a></li>
+            <!-- <li><a href="#">관심목록</a></li>
+            <li><a href="#">매물등록</a></li> -->
+            <li><a href="/board/selectList.do">게시판</a></li>
+            <!-- <li><a href="">로그인</a></li> -->
+            <li>
+	            <c:choose>
+					<c:when test="${empty USER_INFO.id}">
+						<a href="/login/egovLoginUsr.do" class="login">로그인</a>
+					</c:when>
+					<c:otherwise>
+						<a href="/login/actionLogout.do"><c:out value="${USER_INFO.name}"/>님 로그아웃</a>
+					</c:otherwise>
+				</c:choose>
+			</li>
+        </nav>
+</header>
 
 <div class="container">
 	<div id="contents">
