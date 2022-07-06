@@ -8,71 +8,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Language" content="ko" >
-<meta http-equiv="X-UA-Compatible" content="IE-edge" />
-<meta name="viewport" content="width=device-width,initial-scale=1.0,minimun-scale=1.0,maximum-scale=1.0,user-scalable=no" />
-<title>샤방샤방</title>
-<link href="/asset/front/css/style.css" rel="stylesheet" />
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
-<script src="https://kit.fontawesome.com/77c9453159.js" crossorigin="anonymous"></script>
-
-<script src="http://code.jquery.com/jquery-latest.min.js"></script>
-</head>
-<body>
-
-<header>
-        <h2><a href="#">샤방샤방</a></h2>
-        <nav>
-            <li><a href="#about">소개</a></li>
-            <li><a href="#">매물찾기</a></li>
-            <!-- <li><a href="#">관심목록</a></li>
-            <li><a href="#">매물등록</a></li> -->
-            <li><a href="/board/selectList.do">게시판</a></li>
-            <li>
-	            <c:choose>
-					<c:when test="${empty USER_INFO.id}">
-						<a href="/login/egovLoginUsr.do" class="login">로그인</a>
-					</c:when>
-					<c:otherwise>
-						<a href="/login/actionLogout.do"><c:out value="${USER_INFO.name}"/>님 로그아웃</a>
-					</c:otherwise>
-				</c:choose>
-			</li>
-        </nav>
-    </header>
+<%@ include file="/WEB-INF/jsp/main/inc/Header.jsp" %>
+    
     <section class="banner-area">
         <div class="banner-img"></div>
-        <h1>1인가구</h1>
-        <h2>원/투룸 A to Z</h2>
-        <h1>샤방샤방과 함께 당신의 생활을 만듭니다</h1>
-        <a href="#" class="banner-btn">매물찾기</a>
+            <p>1인가구 <span>원/투룸 A to Z</span></p>
+            <h1><span>샤방샤방</span>과 함께<br> 당신의 <span>생활을 만듭니다</span></h1>
         
+            <a href="#" class="banner-btn">매물찾기</a>
+
         <div class="container">
-            <!-- <div class="row">                  -->
-                <div class="col">
-                    <div class="card card1">
-                        <h5>제품구매</h5>
-                        <p>(공동구매)가전제품 구매</p>
-                    </div>
-                    <div class="card card2">
-                        <h5>기사호출</h5>
-                        <p>인터넷, TV, 청소, 집수리 A/S</p>
-                    </div>
-                    <div class="card card3">
-                        <h5>이사 정산</h5>
-                        <p>한국전력공사, 이삿짐 센터 연결</p>
-                    </div>
-                    <!-- <div class="card card4">
-                        <h5>건물 관리</h5>
+            <div class="col">
+                <div class="card card1">
+                    <h3>제품구매</h3>
+                    <p>(공동구매)가전제품 구매</p>
+                </div>
+                <div class="card card2">
+                    <h3>기사호출</h3>
+                    <p>인터넷, TV, 청소, 집수리 A/S</p>
+                </div>
+                <div class="card card3">
+                    <h3>이사 정산</h3>
+                    <p>한국전력공사, 이삿짐 센터 연결</p>
+                </div>
+                <!-- <div class="card card4">
+                        <h3>건물 관리</h3>
                         <p>건물 관리 설명</p>
                     </div> -->
-                </div>
-            <!-- </div> -->
-        </div>        
-    </section>
+            </div>
+        </div> 
+    </section>    
 
 
     <section class="about-area" id="about">
@@ -81,12 +47,12 @@
             <li class="about-left"></li>
             <li class="about-right">
                 <h2>About our Company</h2>
-                <p>샤방샤방은 세입자와 임대인 모두 선진적인 주거문화 정착을 위해 함께합니다. 
+                <p>샤방샤방은 세입자와 임대인 모두 선진적인 주거문화 정착을 위해 함께합니다.
                     세입자는 원하는 집을 임대인과 1:1로 연결하고 사는 동안 필요한 모든 생활을 함께하며
                     임대인은 매물 업로드부터 세입자 관리까지 한번에 관리할 수 있습니다.</p>
                 <a href="#" class="about-btn">Learn more</a>
             </li>
-        </ul>        
+        </ul>
     </section>
 
     <section class="services-area" id="services">
@@ -95,17 +61,18 @@
             <li>
                 <i class="fa-solid fa-people-roof"></i>
                 <h4>임대차 관리</h4>
-                <p>임대차 관리 설명</p>
+                <p>임대인은 자신의 방을 홍보하고, 임차인 내역을 관리합니다.</p>
+                <p>임차인은 자신의 방을 알아보고, 생활에 필요한 것들을 해결합니다.</p>
             </li>
             <li>
                 <i class="fa-solid fa-house"></i>
                 <h4>건물관리</h4>
-                <p>청소, 집수리 A/S, 빨래, 공동구매 등</p>
+                <p>임대인과 임차인 모두 생활에 필요한 청소, 집수리 A/S, 빨래, 공동구매 등을<br> 해결합니다.</p>
             </li>
             <li>
                 <i class="fa-solid fa-suitcase-rolling"></i>
                 <h4>이사 정산</h4>
-                <p>이삿짐 센터 연결</p>
+                <p>이사 시, 해당 날짜의 전기/가스/통신 등의 정산을 한번에 해결합니다.</p>
             </li>
         </ul>
     </section>
@@ -119,18 +86,16 @@
             </li>
             <li>
                 <i class="fa fa-phone"></i>
-                <p>010-1111-1111 <br> 010-1111-1111</p>
+                <p>010-4848-4848 <br> 010-4040-4040</p>
             </li>
             <li>
                 <i class="fa fa-envelope"></i>
-                <p>@naver.com
+                <p>twinkle@naver.com
             </li>
         </ul>
     </section>
 
-    <footer>
-        <p>All Rights Reserved by 샤방샤방</p>
-    </footer>
+    <%@ include file="/WEB-INF/jsp/main/inc/Footer.jsp" %>
 
 
 
@@ -139,7 +104,7 @@
 <div class="layer-popup layer-login" style="display:none;">
 	<header class="layer-header">
 		<span class="logo">
-			<span class="img-logo">샤방샤방</span>
+			<span class="img-logo"> <img alt="" src='<c:url value="/asset/front/images/common/my_logo.png"/>'></span>
 		</span>
 		<button type="button" class="layer-close"><span>팝업 닫기</span></button>
 	</header>
