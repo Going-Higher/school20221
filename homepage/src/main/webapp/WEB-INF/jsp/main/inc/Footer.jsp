@@ -7,4 +7,4 @@
 
 <footer>
         <p>All Rights Reserved by 샤방샤방</p>
-    </footer>
+</footer>
