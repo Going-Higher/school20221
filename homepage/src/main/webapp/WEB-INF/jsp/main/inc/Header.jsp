@@ -31,8 +31,8 @@
             <!-- Menu -->
             <div class="gnb">
                 <ul class="header_menu">
-                    <li><a href="#about">소개</a></li>
-                    <li><a href="#">매물찾기</a></li>
+                    <li><a href="/index.do#about">소개</a></li>
+                    <li><a href="/room/selectList.do">매물찾기</a></li>
                     <!-- <li><a href="#">관심목록</a></li>
             			<li><a href="#">매물등록</a></li> -->
                     <li><a href="/board/selectList.do">게시판</a></li>
