@@ -139,6 +139,20 @@ section p {
 .banner-area h1 span{
     font-weight: bold;
 }
+
+/*  @keyframes typing {
+    from {
+        width: 0;
+    }
+}
+h1 {
+    width: 20ch;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: .05em solid black;
+    animation: typing 3s steps(5), cursor 1s steps(1) infinite;
+} */
+
 .banner-area a.banner-btn {
     padding: 15px 35px;
     background: crimson;

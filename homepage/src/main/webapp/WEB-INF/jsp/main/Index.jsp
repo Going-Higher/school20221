@@ -14,7 +14,7 @@
     <section class="banner-area">
         <div class="banner-img"></div>
             <p>1인가구 <span>원/투룸 A to Z</span></p>
-            <h1><span>샤방샤방</span>과 함께<br> 당신의 <span>생활을 만듭니다</span></h1>
+            <h1><span>샤방샤방</span>과 함께<br>당신의 <span>생활을 만듭니다</span></h1>
         
             <a href="/room/selectList.do" class="banner-btn">매물찾기</a>
 
