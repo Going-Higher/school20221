@@ -140,7 +140,7 @@ section p {
     font-weight: bold;
 }
 
-/*  @keyframes typing {
+/* @keyframes typing {
     from {
         width: 0;
     }
@@ -152,7 +152,6 @@ h1 {
     border-right: .05em solid black;
     animation: typing 3s steps(5), cursor 1s steps(1) infinite;
 } */
-
 .banner-area a.banner-btn {
     padding: 15px 35px;
     background: crimson;
