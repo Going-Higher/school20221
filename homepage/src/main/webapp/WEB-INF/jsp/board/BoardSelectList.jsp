@@ -157,6 +157,8 @@
 <c:if test="${not empty message}">
 	alert("${message}");
 </c:if>
-</script>	
+</script>
+
+
 </body>
 </html>

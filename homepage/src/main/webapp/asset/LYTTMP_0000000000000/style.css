@@ -6292,7 +6292,7 @@ li .img_order { padding-left:0;margin-top:10px; }
 	/* layer-popup */
 	.layer-popup {
 		width:700px;
-		margin-left:-350px !important;
+		/*margin-left:-350px !important;*/
 	}
 	.popup .modal-content {
 		width:700px;

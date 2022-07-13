@@ -52,6 +52,8 @@ public class LoginVO implements Serializable{
 	private String ip;
 	/** GPKI인증 DN */
 	private String dn;
+	//리턴URL
+	private String retUrl;
 	/**
 	 * id attribute 를 리턴한다.
 	 * @return String
@@ -245,6 +247,12 @@ public class LoginVO implements Serializable{
 	 */
 	public void setOrgnztNm(String orgnztNm) {
 		this.orgnztNm = orgnztNm;
+	}
+	public String getRetUrl() {
+		return retUrl;
+	}
+	public void setRetUrl(String retUrl) {
+		this.retUrl = retUrl;
 	}
 	
 }

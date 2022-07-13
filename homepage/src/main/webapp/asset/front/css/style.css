@@ -131,32 +131,38 @@ section p {
 .banner-area p span {
     font-weight: lighter;
 }
-.banner-area h1 {
+/* .banner-area h1 {
     margin-bottom: 40px;
     font-size: 50px;
     font-weight: lighter;
 }
 .banner-area h1 span{
     font-weight: bold;
-}
+} */
 
-/* @keyframes typing {
-    from {
-        width: 0;
-    }
+.typing-txt {
+    display: none;
 }
-.text {
-    width: 20ch;
-    overflow: hidden;
-    white-space: nowrap;   
-    animation: typing 2s steps(5), cursor 1s steps(1) infinite;
-}  */
+.typing ul li {
+    display:block;
+    list-style:none;
+    font-size: 50px;
+    /* font-weight: bold; */
+}
+.typing ul li.on {  
+  display: inline-block; 
+  animation-name: cursor; 
+  animation-duration: 0.3s; 
+  animation-iteration-count: infinite; 
+} 
+
+
 
 .banner-area a.banner-btn {
     padding: 15px 35px;
     background: crimson;
     border-radius: 50px;
-    /* margin-top: 50px; */
+    margin-top: 50px;
     cursor: pointer;
 }
 .banner-area a.banner-btn:hover {
@@ -267,6 +273,7 @@ ul.about-content {
     /* text-transform: uppercase; */
     color: #fff;
 }
+
 @media (max-width: 1000px) {
     .about-left,
     .about-right {

@@ -14,8 +14,20 @@
     <section class="banner-area">
         <div class="banner-img"></div>
             <p>1인가구 <span>원/투룸 A to Z</span></p>
-            <!-- <h1><span>샤방샤방</span>과 함께<br> 당신의 <span>생활을 만듭니다</span></h1> -->
-        <h1 class="text"><span>샤방샤방</span>과 함께<br>당신의 <span>생활을 만듭니다</span></h1>
+            <!-- <h1><span>샤방샤방</span>과 함께<br> 당신의 <span>생활을 만듭니다</span></h1>                       -->
+        <div class="typing-txt">
+            <ul>
+                <li><span>샤방샤방</span>과 함께</li>
+                <li>당신의 <span>생활을 만듭니다</span> </l>
+            </ul>
+
+        </div>
+        <div class="typing">
+            <ul>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
         
             <a href="/room/selectList.do" class="banner-btn">매물찾기</a>
 
@@ -100,65 +112,7 @@
 
 
 
-<div class="dim"></div>
-<!-- 로그인 -->
-<div class="layer-popup layer-login" style="display:none;">
-	<header class="layer-header">
-		<span class="logo">
-			<span class="img-logo"> <img alt="" src='<c:url value="/asset/front/images/common/my_logo.png"/>'></span>
-		</span>
-		<button type="button" class="layer-close"><span>팝업 닫기</span></button>
-	</header>
-	<div class="layer-body">
-		<form action="/login/actionLogin.do" id="frmLogin" name="frmLogin" method="post" onsubmit="return vali()">
-			<input type="hidden" name="userSe" value="USR"/>
-			<fieldset>
-				<!-- <legend>로그인을 위한 아아디/비밀번호 입력</legend> -->
-				<div class="ipt-row">
-					<input type="text" id="loginId" name="id" placeholder="아이디" required="required">
-				</div>
-				<div class="ipt-row">
-					<input type="password" id="loginPw" name="password" placeholder="비밀번호" required="required">
-				</div>
-				<button type="submit" class="btn-login"><span>로그인</span></button>
-			</fieldset>
-		</form>
-	</div>
-</div>
 
-<script>
-$(document).ready(function(){
-	//로그인
-	$(".login").click(function(){
-		$(".dim, .layer-login").fadeIn();
-		return false;
-	});
-	
-	//레이어닫기
-	$(".layer-close").click(function(){
-		$(".dim, .layer-login").fadeOut();
-		return false;
-	});
-});
 
-function vali(){
-	if(!$("#loginId").val()){
-		alert("아이디를 입력해주세요.");
-		$("#loginId").focus();
-		return false;
-	}
-	
-	if(!$("#loginPw").val()){
-		alert("비밀번호를 입력해주세요.");
-		$("#loginPw").focus();
-		return false;
-	}
-}
-
-<c:if test="${not empty loginMessage}">
-	alert("${loginMessage}");
-</c:if>
-
-</script>
 </body>
 </html>
