@@ -147,16 +147,14 @@ section p {
     display:block;
     list-style:none;
     font-size: 50px;
-    /* font-weight: bold; */
 }
-.typing ul li.on {  
-  display: inline-block; 
-  animation-name: cursor; 
-  animation-duration: 0.3s; 
-  animation-iteration-count: infinite; 
+.typing ul li.on { 
+	font-weight: bold;
+	display: inline-block; 
+	animation-name: cursor; 
+	animation-duration: 0.3s; 
+	animation-iteration-count: infinite; 
 } 
-
-
 
 .banner-area a.banner-btn {
     padding: 15px 35px;

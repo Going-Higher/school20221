@@ -18,7 +18,7 @@
         <div class="typing-txt">
             <ul>
                 <li><span>샤방샤방</span>과 함께</li>
-                <li>당신의 <span>생활을 만듭니다</span> </l>
+                <li>당신의  <span>생활을 만듭니다</span> </l>
             </ul>
 
         </div>
