@@ -1,0 +1,123 @@
+/* filter */
+.filter {
+    text-align: center;
+    padding: 10px;
+    font-size: 15px;
+}
+.filter label {
+    padding: 0 20px;
+}
+
+/*-- LAYAOUT --*/
+.main {
+    padding: 2rem 0;
+}
+.bd-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    max-width: 1200px;
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
+    align-items: center;
+    gap: 2rem;
+}
+
+/*-- COMPONENT --*/
+.list{
+	width: 290px;
+	hegith: 150px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    margin: 10px;
+}
+article:nth-child(3n+1){
+    background-color: #E3F8FF;
+}
+article:nth-child(3n+2){
+    background-color: #DCFAFB;
+}
+article:nth-child(3n){
+    background-color: #FFE8DF;
+}
+
+.list_img{
+    width: 250px;
+    height: auto;
+    padding: 2rem 0;
+    transition: .5s;
+}
+.list_name{
+    position: absolute;
+    left: -25%;
+    top: 0;
+    width: 3.5rem;
+    height: 100%;
+    text-align: center;
+    background-color: #161616;
+    color: #fff;
+    font-weight: bold;
+    transition: .5s;
+}
+.list_name p {
+	margin-top: 20px;
+}
+.list_icon{
+    font-size: 1.5rem;
+    color: #161616;
+}
+.list_icon:hover{
+    color: #FF5151;
+}
+.list_precis{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    transition: .5s;
+}
+.list_preci{
+    display: block;
+    text-align: center;
+}
+.list_preci--before{
+    font-size: 0.75rem;
+    color: #FF5151;
+    margin-bottom: .25rem;
+}
+.list_preci--now{
+    font-size: 1rem;
+    font-weight: bold;
+}
+/*Move left*/
+.list:hover{
+    box-shadow: 0 .5rem 1rem #D1D9E6;
+}
+.list:hover .list_name{
+    left: 0;
+}
+.list:hover .list_img{
+    transform: rotate(10deg);
+    margin-left: 3.5rem;
+}
+.list:hover .list_precis{
+    margin-left: 3.5rem;
+    padding: 0 1.5rem;
+}
+
+/*-- MEDIA QUERIES --*/
+@media screen and (min-width: 1200px){
+    body{
+        margin: 0 0 0 0;
+    }
+    .title-shop{
+        margin: 0 5rem;
+    }
+    .bd-grid{
+        margin-left: auto;
+        margin-right: auto;
+    }

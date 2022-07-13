@@ -55,6 +55,10 @@ a {
     border-radius: 4px;
     color: #fff;
   }
+    .header_menu li a {
+    font-size: 13px;
+  }
+
   .menu-toggle-btn {
 	position: absolute;
 	right: 20px;

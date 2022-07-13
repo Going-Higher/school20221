@@ -125,5 +125,12 @@ public class EgovLoginController {
 
 		return "forward:/cmm/main/mainPage.do";
 	}
+	
+	/* 매물찾기로 이동*/
+	@RequestMapping(value = "/roomList.do")
+	public String roomList(HttpServletRequest request, ModelMap model) throws Exception {
+
+		return "main/roomList";
+	}
 
 }

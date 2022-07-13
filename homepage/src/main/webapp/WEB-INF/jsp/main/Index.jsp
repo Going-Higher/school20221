@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+<body>
 <%@ include file="/WEB-INF/jsp/main/inc/Header.jsp" %>
     
     <section class="banner-area">
