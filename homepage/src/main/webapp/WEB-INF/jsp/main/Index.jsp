@@ -29,7 +29,7 @@
             </ul>
         </div>
         
-            <a href="/room/selectList.do" class="banner-btn">매물찾기</a>
+<!--             <a href="/room/selectList.do" class="banner-btn">매물찾기</a> -->
 
         <div class="container">
             <div class="col">
