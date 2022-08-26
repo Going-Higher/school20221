@@ -17,8 +17,8 @@
 <!-- 공통 Style -->
 <link href="/asset/LYTTMP_0000000000000/style.css" rel="stylesheet" />
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-</head>
-<body>
+
+<%@ include file="/WEB-INF/jsp/main/inc/Header.jsp" %>
 
 <%-- 기본 URL --%>
 <c:url var="_BASE_PARAM" value="">
@@ -86,6 +86,9 @@
 		</div>
 	</div>
 </div>
+
+<%@ include file="/WEB-INF/jsp/main/inc/Footer.jsp" %>
+
 <script>
 $(document).ready(function(){
 	//게시 글 삭제

@@ -109,10 +109,6 @@
     </section>
 
     <%@ include file="/WEB-INF/jsp/main/inc/Footer.jsp" %>
-
-
-
-
-
+    
 </body>
 </html>

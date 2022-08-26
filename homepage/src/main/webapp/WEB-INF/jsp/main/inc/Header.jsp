@@ -16,10 +16,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link
-	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
-	rel="stylesheet">
-<script src="https://kit.fontawesome.com/77c9453159.js"
-	crossorigin="anonymous"></script>
+	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/77c9453159.js" crossorigin="anonymous"></script>
 <script src="/asset/front/js/jquery.min.js"></script>
 <script src="/asset/front/js/indigo.min.js"></script>
 
@@ -37,7 +35,7 @@
 			<div class="gnb">
 				<ul class="header_menu">
 					<li><a href="/index.do#about">소개</a></li>
-					<li><a href="/roomList.do">매물찾기</a></li>
+<!-- 					<li><a href="/roomList.do">매물찾기</a></li> -->
 					<!-- <li><a href="#">관심목록</a></li> -->
 					<!-- <li><a href="#">매물등록</a></li> -->
 					<li><a href="/board/selectList.do">게시판</a></li>
@@ -47,11 +45,11 @@
 								<a href="/login/egovLoginUsr.do" class="login">로그인</a>
 							</c:when>
 							<c:otherwise>
-								<a href="/login/actionLogout.do"> <c:out
-										value="${USER_INFO.name}" />님 로그아웃
+								<a href="/login/actionLogout.do"> <c:out value="${USER_INFO.name}" />님 로그아웃
 								</a>
 							</c:otherwise>
 						</c:choose></li>
+					<li><a href="/join/memberType.do">회원가입</a></li>
 				</ul>
 			</div>
 			<div class="menu-toggle-btn">
@@ -126,4 +124,8 @@ function vali(){
 <c:if test="${not empty loginMessage}">
 	alert("${loginMessage}");
 </c:if>
+
+// <c:if test="${not empty message}">
+// 	alert("${message}");
+// </c:if>
 </script>

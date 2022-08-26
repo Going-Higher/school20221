@@ -93,8 +93,7 @@ $(function(){
     });
 });
 </script>
-</head>
-<body>
+<%@ include file="/WEB-INF/jsp/main/inc/Header.jsp" %>
 
 <c:choose>
 	<c:when test="${not empty searchVO.boardId}">
@@ -209,6 +208,9 @@ $(function(){
 		</form>
 	</div>
 </div>
+
+<%@ include file="/WEB-INF/jsp/main/inc/Footer.jsp" %>
+
 <script>
 $(document).ready(function(){
 	//게시 글 등록

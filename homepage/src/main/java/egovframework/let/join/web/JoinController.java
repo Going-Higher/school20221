@@ -82,10 +82,10 @@ public class JoinController {
 		}else {
 			joinService.insertJoin(vo);
 			model.addAttribute("message", egovMessageSource.getMessage("join.request.msg"));
-			//회원신청이 정상적으로 완료되었습니다. 로그인 후 이용해 주세요.			
+			//회원신청이 정상적으로 완료되었습니다. 로그인 후 이용해 주세요.	
 		}
 		
-		return "forward:/index.do";
+		return "redirect:/index.do";
 	}
 	
 	//아이디 중복체크
@@ -100,7 +100,7 @@ public class JoinController {
 		int duplicateCnt = joinService.duplicateCheck(vo);
 		if(duplicateCnt > 0) {
 			successYn = "N";
-			message = egovMessageSource.getMessage("fail.duplicate.member");//이미 사용중인 ID입니다.
+			message = egovMessageSource.getMessage("fail.duplicate.member");
 		}
 		
 		jo.put("successYn", successYn);
