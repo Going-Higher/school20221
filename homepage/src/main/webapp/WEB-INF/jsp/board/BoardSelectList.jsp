@@ -21,7 +21,7 @@
 <head>
 <meta http-equiv="Content-Language" content="ko" >
 <meta http-equiv="X-UA-Compatible" content="IE-edge" />
-<meta name="viewport" content="width=device-width,initial-scale=1.0,minimun-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
 <title>샤방샤방 게시판</title>
 <!-- BBS Style -->
 <link href="/asset/BBSTMP_0000000000001/style.css" rel="stylesheet" />
@@ -118,11 +118,12 @@
 										</c:if>
 										<c:out value="${result.boardSj}"/>
 									</a>
+								</td>
 								<td class="writer" data-cell-header="작성자: ">
 									<c:out value="${result.frstRegisterId}"/>
 								</td>
 								<td class="date" data-cell-header="작성일: ">
-									<fmt:formatDate value="${result.frstRegistPnttm}" pattern="yyy-MM-dd"/>
+									<fmt:formatDate value="${result.frstRegistPnttm}" pattern="yyyy-MM-dd"/>
 								</td>
 								<td class="hits" data-cell-header="조회수: "><c:out value="${result.inqireCo}"/></td>
 							</tr>
