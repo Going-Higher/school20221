@@ -1,13 +1,7 @@
 package egovframework.let.join.service.impl;
-import java.util.Iterator;
-import java.util.List;
 
 import egovframework.let.join.service.JoinVO;
-import egovframework.rte.psl.dataaccess.EgovAbstractDAO;
 import egovframework.rte.psl.dataaccess.mapper.Mapper;
-import egovframework.rte.psl.dataaccess.util.EgovMap;
-
-import org.springframework.stereotype.Repository;
 
 @Mapper("joinMapper")
 public interface JoinMapper {
