@@ -44,7 +44,8 @@
 					COUNT(*) 
 				FROM RESVEREQSTINFO B
 				WHERE A.RESVE_ID = B.RESVE_ID) AS APPLY_CNT
-			<![CDATA[
+			<!-- CDATA : 부등호를 태그로 인식하기 때문에 사용함 -->
+			<![CDATA[ 
 			, CASE WHEN DATE_FORMAT(NOW(), '%Y-%m-%d') < A.REQST_BGNDE THEN 1
 				   WHEN DATE_FORMAT(NOW(), '%Y-%m-%d') >= A.REQST_BGNDE AND DATE_FORMAT(NOW(), '%Y-%m-%d') <= A.REQST_ENDDE THEN 2
 				   WHEN DATE_FORMAT(NOW(), '%Y-%m-%d') > A.REQST_ENDDE AND DATE_FORMAT(NOW(), '%Y-%m-%d') < A.USE_BEGIN_DT THEN 3

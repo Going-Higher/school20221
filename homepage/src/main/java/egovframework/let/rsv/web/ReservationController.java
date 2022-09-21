@@ -1,4 +1,4 @@
-package egovframework.let.admin.rsv.web;
+package egovframework.let.rsv.web;
 
 import java.util.List;
 
@@ -24,8 +24,8 @@ public class ReservationController {
 	private ReservationService reservationService;
 	
 	//예약정보 목록 가져오기
-	@RequestMapping(value = "/admin/rsv/rsvSelectList.do")
-	public String rsvSelectList(@ModelAttribute("searchVO") ReservationVO searchVO, HttpServletRequest request, ModelMap model) throws Exception {
+	@RequestMapping(value = "/rsv/selectList.do")
+	public String selectList(@ModelAttribute("searchVO") ReservationVO searchVO, HttpServletRequest request, ModelMap model) throws Exception {
 		
 		PaginationInfo paginationInfo = new PaginationInfo();
 		
@@ -48,7 +48,7 @@ public class ReservationController {
 		LoginVO user = (LoginVO)EgovUserDetailsHelper.getAuthenticatedUser();
 		model.addAttribute("USER_INFO", user);
 		
-		return "admin/rsv/RsvSelectList";		
-		
-	}
+		return "rsv/RsvSelectList";
+	}	
+
 }
