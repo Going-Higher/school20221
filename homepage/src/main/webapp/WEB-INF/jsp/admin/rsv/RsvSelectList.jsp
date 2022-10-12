@@ -134,7 +134,7 @@
 			</div>
 			<div class="btn-cont ar">
 				<a href="/admin/rsv/rsvRegist.do" class="btn spot"><i class="ico-check-spot"></i> 등록</a>
-			</div>
+			</div>			
 		</div>
 	</div>
 </div>
